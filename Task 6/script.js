@@ -19,3 +19,17 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30 },
   { id: '9', name: 'Daniel Cane', age: 51 },
 ];
+
+//1. // Result: 31.444444444444443
+function getUserAverageAge(users) {
+  const totalAge = users.reduce(
+    (accumulator, user) => accumulator + user.age,
+    0
+  );
+  return totalAge / users.length;
+}
+
+//2.// Result: John Smith, Ann Smith, Tom Jones, Rose Peterson, Alex John, Ronald Jones, Elton Smith, Simon Peterson, Daniel Cane.
+function getUsersNames(users) {
+  return users.map((user) => user.name);
+}
