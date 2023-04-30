@@ -19,3 +19,21 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30, hasDog: false },
   { id: '9', name: 'Daniel Cane', age: 51, hasDog: true },
 ];
+
+function filterDogOwners(array) {
+  return array.filter((user) => user.hasDog);
+}
+const dogOwners = filterDogOwners(users);
+const dogOwnersList = document.createElement('ul');
+dogOwnersList.innerHTML = dogOwners
+  .map((user) => `<li>${user.name}</li>`)
+  .join('');
+document.body.appendChild(dogOwnersList);
+
+function filterAdults(array) {
+  return array.filter((user) => user.age >= 18);
+}
+const adults = filterAdults(users);
+const adultsList = document.createElement('ul');
+adultsList.innerHTML = adults.map((user) => `<li>${user.name}</li>`).join('');
+document.body.appendChild(adultsList);
